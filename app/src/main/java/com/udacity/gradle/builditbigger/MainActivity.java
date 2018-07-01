@@ -8,11 +8,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.jokesProvider.JokesProvider;
+
 import com.example.android.displayjokes.DisplayJokesActivity;
 
 public class MainActivity extends AppCompatActivity {
-    JokesProvider jokesProvider = new JokesProvider();
+ //   JokesProvider jokesProvider = new JokesProvider();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,11 +46,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
+        new EndpointsAsyncTask(new EndpointsAsyncTask.TaskCompleteListener() {
+            @Override
+            public void onTaskComplete(String result) {
+                Intent intent = new Intent(MainActivity.this, DisplayJokesActivity.class);
+                intent.putExtra(DisplayJokesActivity.JOKE, result);
+                startActivity(intent);
 
-        Intent intent = new Intent(this, DisplayJokesActivity.class);
-        intent.putExtra("JOKE", jokesProvider.tellAJoke());
-        startActivity(intent);
-        Toast.makeText(this, jokesProvider.tellAJoke(), Toast.LENGTH_SHORT).show();
+              // Toast.makeText(MainActivity.this, result, Toast.LENGTH_SHORT).show();
+            }
+            }).execute();
     }
 
 

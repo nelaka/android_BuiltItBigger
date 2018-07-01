@@ -10,10 +10,10 @@
     <TextView
         android:id="@+id/joke_tv"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         tools:text="Tell a joke!"
         android:textSize="@dimen/tell_joke_size"
-        android:gravity="center_horizontal"
+        android:gravity="center_horizontal|center|center_vertical"
 
           />
 </LinearLayout>

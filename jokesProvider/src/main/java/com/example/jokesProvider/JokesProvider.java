@@ -9,7 +9,7 @@ public class JokesProvider {
     private void prepareJokes(){
 
         //https://www.scandit.com/top-10-geek-jokes-for-developers/
-        jokes.add("Q: how many programmers does it take to change a light bulb?\n A: none, that’s a hardware problem");
+        jokes.add("Q: how many programmers does it take to change a light bulb?\nA: none, that' s a hardware problem");
         jokes.add("To understand what recursion is, you must first understand recursion.");
         jokes.add("Q. How did the programmer die in the shower?\n  A. He read the shampoo bottle instructions: Lather. Rinse. Repeat.");
 
@@ -20,7 +20,8 @@ public class JokesProvider {
         prepareJokes();
         if ( position < jokes.size() - 1 )  position = position + 1;
             else position = 0;
-        return jokes.get(position);
+            //we use replaceAll for the apostrofe (') character to be recognized correctly inside TextView
+        return jokes.get(position).replaceAll("\u2019", "&#39;");
 
     }
 }
