@@ -21,7 +21,6 @@ android {
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
-
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -38,12 +37,9 @@ android {
     productFlavors {
         free {
             applicationId "com.udacity.gradle.builditbigger.free"
-
-
         }
         paid {
             applicationId "com.udacity.gradle.builditbigger.paid"
-
         }
     }
 }
@@ -59,6 +55,7 @@ dependencies {
     implementation "com.android.support:customtabs:${supportLibVersion}"
 
     implementation 'com.google.api-client:google-api-client:1.23.0'
+
     implementation 'com.google.http-client:google-http-client-android:1.23.0'
     implementation 'com.google.code.findbugs:jsr305:3.0.1'
 
