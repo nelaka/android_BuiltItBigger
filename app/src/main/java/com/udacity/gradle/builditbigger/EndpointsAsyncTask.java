@@ -14,6 +14,7 @@ class EndpointsAsyncTask extends AsyncTask<String, Void, String> {
     private static MyApi myApiService = null;
 
 
+
     @Override
     protected String doInBackground(String... params) {
         if(myApiService == null) {  // Only do this once
@@ -25,7 +26,7 @@ class EndpointsAsyncTask extends AsyncTask<String, Void, String> {
                     .setRootUrl("http://10.0.2.2:8080/_ah/api/")
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
                         @Override
-                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
+                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) {
                             abstractGoogleClientRequest.setDisableGZipContent(true);
                         }
                     });
@@ -33,6 +34,7 @@ class EndpointsAsyncTask extends AsyncTask<String, Void, String> {
 
             myApiService = builder.build();
         }
+
 
         //String joke = params[0];
 

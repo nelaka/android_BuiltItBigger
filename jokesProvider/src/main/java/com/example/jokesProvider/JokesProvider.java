@@ -9,8 +9,8 @@ public class JokesProvider {
     private void prepareJokes(){
 
         //https://www.scandit.com/top-10-geek-jokes-for-developers/
-        jokes.add("Q: how many programmers does it take to change a light bulb?\nA: none, that' s a hardware problem");
         jokes.add("To understand what recursion is, you must first understand recursion.");
+        jokes.add("Q: how many programmers does it take to change a light bulb?\nA: none, that' s a hardware problem");
         jokes.add("Q. How did the programmer die in the shower?\n  A. He read the shampoo bottle instructions: Lather. Rinse. Repeat.");
 
     }
