@@ -25,7 +25,7 @@ Through this project I learnt to:
   <li>Configure an integration test suite that runs against the local App Engine development server</li>
 </ul>
 
-You could find project's instructions and the basic steps in [README_instructions.md](README_instructions.md). 
+You could find project's instructions and basic steps [here](README_instructions.md). 
 
 <h2> App's screenshots</h2>
 <p><img src="screenshots/builditbigger_1.png" width="33%"/>   <img src="screenshots/builditbigger_2.png" width="33%"/></p>
