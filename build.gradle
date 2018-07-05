@@ -19,3 +19,41 @@ allprojects {
         google()
     }
 }
+
+
+////////////////////////////////////
+
+task serverStart {
+    dependsOn ':backend:appengineStart'
+    doLast {
+        println "Server is running."
+    }
+}
+
+task runAsyncTest {
+    dependsOn ':app:connectedAndroidTest'
+    mustRunAfter serverStart
+
+    doLast {
+        println "AsyncTest has finished."
+    }
+}
+
+task serverShutDown {
+    dependsOn ':backend:appengineStop'
+    shouldRunAfter runAsyncTest
+
+    doLast {
+        println "Server has stopped."
+    }
+}
+
+
+task runAllTests {
+    dependsOn = ["serverStart", "runAsyncTest", "serverShutDown"]
+
+}
+runAsyncTest.mustRunAfter(serverStart)
+serverShutDown.mustRunAfter(runAsyncTest)
+
+
